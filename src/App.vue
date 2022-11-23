@@ -1,30 +1,63 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
-  <router-view/>
+  <div class="bg-img">
+    <div class="wrapper">
+      <nav>
+        <router-link to="/">Home</router-link> |
+        <router-link to="/about">About</router-link>
+      </nav>
+      <router-view />
+    </div>
+  </div>
 </template>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+nav a {
+  text-transform: capitalize;
+  transition: 0.3s all;
+  font-weight: bold;
+}
+nav a:not(:first-child) {
+  margin-left: 10px;
+}
+
+nav a:not(:first-child):hover {
+  color: rgb(41, 187, 41);
+}
+
+.bg-img {
+  background-image: url("@/assets/img/negative-space-seasonal-ribbon-pinecones.jpg");
+  width: 100%;
+  min-height: 100vh;
+  background-size: cover;
+  padding: 2rem;
+  box-sizing: border-box;
+}
+.wrapper {
+  padding: 1rem;
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 6px;
+  box-shadow: 5px 5px 3px rgba(0, 0, 0, 0.3);
+  box-sizing: border-box;
+  display: flex;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  justify-content: space-evenly;
 }
 
 nav {
-  padding: 30px;
+  width: 300px;
 }
 
 nav a {
-  font-weight: bold;
-  color: #2c3e50;
+  padding: 5px;
+  display: block;
+  color: black;
+  text-decoration: none;
 }
 
-nav a.router-link-exact-active {
-  color: #42b983;
+.router-link-active {
+  font-weight: bold;
+  color: red;
 }
 </style>

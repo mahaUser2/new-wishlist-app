@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Mountains+of+Christmas&family=Roboto:wght@300;400&family=Snowburst+One&display=swap');
+
+body{
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+#app{
+    width: 100%; 
+    min-height: 100vh; 
+    margin: 0
+}
+
+nav{
+    font-family: 'Snowburst One', cursive;
+}
+
+h1, h2, h3, h4, h5, h6{
+    font-family: 'Mountains of Christmas', cursive;
+}
