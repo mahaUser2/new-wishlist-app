@@ -4,6 +4,8 @@
     <h2>{{ getToy.name }}</h2>
     <ToyImage :imgSrc="getToy.url"></ToyImage>
     <p>{{ getToy.description }}</p>
+    <label for="addToWishlist">Add to wishlist</label>
+    <input type="checkbox" id="addToWishlist" v-model="getToy.isFav" />
   </div>
 </template>
 

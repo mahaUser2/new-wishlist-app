@@ -19,5 +19,9 @@ export const useToysStore = defineStore("toys", {
     },
   },
   // getters
-  getters: {},
+  getters: {
+    returnFavs() {
+      return this.toys.filter((toy) => toy.isFav === true);
+    },
+  },
 });
