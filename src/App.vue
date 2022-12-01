@@ -2,13 +2,34 @@
   <div class="bg-img">
     <div class="wrapper">
       <nav>
-        <router-link to="/">Home</router-link> |
-        <router-link to="/about">About</router-link>
+        <router-link to="/">Wishlist</router-link> |
+        <router-link
+          v-for="toy in toysStore.toys"
+          :key="toy.id"
+          :to="`/toys/${toy.slug}`"
+        >
+          {{ toy.name }}
+        </router-link>
       </nav>
       <router-view />
     </div>
   </div>
 </template>
+
+<script>
+import {useToysStore} from "@/stores/ToyStore";
+import {mapStores} from "pinia";
+
+export default {
+  name: "App",
+  computed: {
+    ...mapStores(useToysStore), // This creates toysStore
+  },
+  created() {
+    this.toysStore.getDataFromApi();
+  },
+};
+</script>
 
 <style>
 nav a {
